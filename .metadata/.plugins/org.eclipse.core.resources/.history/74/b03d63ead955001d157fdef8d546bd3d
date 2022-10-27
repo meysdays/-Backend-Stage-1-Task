@@ -1,0 +1,26 @@
+package com.springboot.first.app;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class StudentController {
+	
+	@GetMapping("/student")
+	public Student getStudent() {
+		return new Student("Victor","Igbokwe");
+	}
+	
+	@GetMapping("/students")
+	public List<Student> getStudents(){
+		List<Student> students = new ArrayList<>();
+		students.add(new Student("Victor", "Igbokwe"));
+		students.add(new Student("Vicky", "Igbokwe"));
+		students.add(new Student("Timi", "Igbokwe"));
+		students.add(new Student("Opeyemi", "Igbokwe"));
+		return students;
+	}
+}
